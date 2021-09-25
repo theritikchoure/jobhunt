@@ -69,6 +69,8 @@ Route::get('terms-and-conditions', [PageController::class, 'termcon'])->name('te
 // ***************  Internships Related Routes (start)  *********************************//
 
 Route::get('internships', [InternshipController::class, 'internships'])->name('internship');
+Route::get('internships/details/{id}', [InternshipController::class, 'internshipDetails'])->name('internshipDetails');
+Route::get('internships/apply/{id}', [InternshipController::class, 'internshipsApply'])->name('internshipApply');
 
 // ***************  Internships Related Routes (End)  *********************************//
 
@@ -122,6 +124,8 @@ Route::get('internships', [InternshipController::class, 'internships'])->name('i
 
     Route::get('student/profile', [StudentController::class, 'showProfile'])->name('student.profile.get');
     Route::put('student/profile', [StudentController::class, 'updateProfile'])->name('student.profile.put');
+
+    Route::get('student/applied-internships', [StudentController::class, 'appliedInternships'])->name('student.appliedInternships');
 
     Route::get('student/change-password', [StudentController::class, 'showChangePassword'])->name('student.changePassword.get');
     Route::put('student/change-password', [StudentController::class, 'updateChangePassword'])->name('student.changePassword.put');

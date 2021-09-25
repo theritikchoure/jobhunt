@@ -7,9 +7,12 @@ use App\Jobs\StudentWelcomeMailJob;
 use App\Mail\StudentProfileUpdateMail;
 use App\Mail\StudentWelcomeMail;
 use App\Models\Education;
+use App\Models\Internship;
+use App\Models\InternshipStudent;
 use App\Models\Student;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
@@ -142,6 +145,14 @@ class StudentController extends Controller
     public function dashboard()
     {
         return view('student.dashboard');
+    }
+
+    public function appliedInternships()
+    {
+        $int = DB::table('internship_student') 
+                    ->where('student_id', '=', session('LoggedStu'))->get();        
+
+        return view('student.appliedInternships', compact('int'));
     }
 
     public function showProfile()

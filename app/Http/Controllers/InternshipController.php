@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\Category;
 use App\Models\Employer;
 use App\Models\Internship;
+use App\Models\InternshipStudent;
 use App\Models\Perk;
+use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class InternshipController extends Controller
 {
@@ -101,6 +105,31 @@ class InternshipController extends Controller
         {
             return back()->with('fail', 'something went wrong!');
         }
+    }
+
+
+    public function internshipDetails($id)
+    {
+        $int = Internship::find($id);
+        $applybtn = DB::table('internship_student')
+                            ->where('internship_id', '=', $id)
+                            ->where('student_id', '=', session('LoggedStu'))
+                            ->exists();
+
+        return view('pages.internshipDetails', compact('int', 'applybtn'));
+
+    }
+
+    public function internshipsApply($id)
+    {
+        $stu = Student::where('id', '=', session('LoggedStu'))->first();
+
+        $apply = DB::table('internship_student')->insert([
+            'student_id' => $stu->id,
+            'internship_id' => $id,
+        ]);
+
+        return back()->with('success', 'Applied for this Internship');
     }
 
     /**
