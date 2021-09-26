@@ -22,91 +22,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($emp->internship as $item)
                     <tr>
                         <td>
                             <div class="table-list-title">
-                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
+                                <h3><a href="#" title="">{{$item->title}}</a></h3>
                             </div>
                         </td>
                         <td>
-                            <span class="applied-field">Web Designer / Developer</span>
+                            <span class="applied-field">{{$item->category}}</span>
                         </td>
                         <td>
-                            <a href="#">
+                            <a href="/employer/applications/view/{{$item->id}}">
                                 <button style="float: left; background-color: transparent; border:1px solid purple; color:purple; border-radius:50px;">
                                     View
                                 </button>
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="table-list-title">
-                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="applied-field">Web Designer / Developer</span>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <button style="float: left; background-color: transparent; border:1px solid purple; color:purple; border-radius:50px;">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="table-list-title">
-                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="applied-field">Web Designer / Developer</span>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <button style="float: left; background-color: transparent; border:1px solid purple; color:purple; border-radius:50px;">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="table-list-title">
-                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="applied-field">Web Designer / Developer</span>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <button style="float: left; background-color: transparent; border:1px solid purple; color:purple; border-radius:50px;">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="table-list-title">
-                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="applied-field">Web Designer / Developer</span>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <button style="float: left; background-color: transparent; border:1px solid purple; color:purple; border-radius:50px;">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

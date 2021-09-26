@@ -26,7 +26,7 @@ class CreateInternshipStudentsTable extends Migration
                   ->references('id')
                   ->on('students')
                   ->onDelete('cascade');
-            
+
             $table->integer('status')->default(1);
         });
     }
@@ -38,6 +38,6 @@ class CreateInternshipStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('internship_students');
+        Schema::dropIfExists('internship_student');
     }
 }

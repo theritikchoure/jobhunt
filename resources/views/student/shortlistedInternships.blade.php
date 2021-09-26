@@ -13,7 +13,7 @@
 <div class="col-lg-9 column">
     <div class="padding-left">
         <div class="manage-jobs-sec">
-            <h3>Manage Jobs</h3>
+            <h3>Short Listed Jobs</h3>
             <table>
                 <thead>
                     <tr>
@@ -33,7 +33,7 @@
                         </td>
                         <td>
                             <div class="table-list-title">
-                                <h6><a href="#" title="">{{$item->employer->name}}</a></h6>
+                                <h6><a href="#" title="">Digital Ritik</a></h6>
                             </div>
                         </td>
                         <td>
@@ -41,8 +41,8 @@
                                 <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
                             </ul>
                         </td>
-                    </tr>
-                    @endforeach                    
+                    </tr>  
+                    @endforeach                 
                 </tbody>
             </table>
         </div>

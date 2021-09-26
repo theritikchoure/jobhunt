@@ -149,10 +149,21 @@ class StudentController extends Controller
 
     public function appliedInternships()
     {
-        $int = DB::table('internship_student') 
-                    ->where('student_id', '=', session('LoggedStu'))->get();        
+        if(session()->has('LoggedStu'))
+        {
+            $stu = Student::where('id', '=', session('LoggedStu'))->first();
+            $data = [
+                'LoggedDonorInfo' =>$stu
+            ];
+        }        
 
-        return view('student.appliedInternships', compact('int'));
+        return view('student.appliedInternships', compact('stu', 'data'));
+    }
+
+    public function shortlistedInternships()
+    {
+        $stu = Student::where('id', '=', session('LoggedStu'))->first();
+        return view('student.shortlistedInternships', compact('stu'));
     }
 
     public function showProfile()

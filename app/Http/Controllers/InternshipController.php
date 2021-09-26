@@ -125,8 +125,8 @@ class InternshipController extends Controller
         $stu = Student::where('id', '=', session('LoggedStu'))->first();
 
         $apply = DB::table('internship_student')->insert([
-            'student_id' => $stu->id,
             'internship_id' => $id,
+            'student_id' => $stu->id,
         ]);
 
         return back()->with('success', 'Applied for this Internship');

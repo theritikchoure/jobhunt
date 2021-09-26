@@ -92,6 +92,11 @@ Route::get('internships/apply/{id}', [InternshipController::class, 'internshipsA
 
     Route::get('employer/applications', [EmployerController::class, 'allApplications'])->name('employer.allApplication');
 
+    Route::get('employer/applications/view/{id}', [EmployerController::class, 'viewStuApplications'])->name('employer.viewStuApplications');
+    Route::get('employer/applications/view/{intid}/{stuid}/{status}', [EmployerController::class, 'shortlistorreject'])->name('employer.shortlistorreject');
+
+    Route::get('employer/applications/view/profile/{id}', [EmployerController::class, 'viewStuProfile'])->name('employer.viewStuProfile');
+
     Route::get('employer/all-posted-internships', [EmployerController::class, 'all_posted_internships'])->name('employer.all_posted_internships');
     Route::get('employer/manage-internships', [EmployerController::class, 'manage_internships'])->name('employer.manage_internships');
 
@@ -126,6 +131,8 @@ Route::get('internships/apply/{id}', [InternshipController::class, 'internshipsA
     Route::put('student/profile', [StudentController::class, 'updateProfile'])->name('student.profile.put');
 
     Route::get('student/applied-internships', [StudentController::class, 'appliedInternships'])->name('student.appliedInternships');
+
+    Route::get('student/shorlisted-internships', [StudentController::class, 'shortlistedInternships'])->name('student.shortlistedInternships');
 
     Route::get('student/change-password', [StudentController::class, 'showChangePassword'])->name('student.changePassword.get');
     Route::put('student/change-password', [StudentController::class, 'updateChangePassword'])->name('student.changePassword.put');

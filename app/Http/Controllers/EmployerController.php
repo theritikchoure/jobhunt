@@ -6,7 +6,9 @@ use App\Models\Category;
 use App\Models\Employer;
 use App\Models\Internship;
 use App\Models\Job;
+use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
@@ -201,6 +203,32 @@ class EmployerController extends Controller
         $emp = Employer::where('id', '=', session('LoggedEmp'))->first();
 
         return view('employer.viewApplication', compact('emp'));
+    }
+
+    public function viewStuApplications($id)
+    {
+        $emp = Employer::where('id', '=', session('LoggedEmp'))->first();
+        $int = Internship::where('id', '=', $id)->first();
+
+        return view('employer.viewstuapplications', compact('int', 'emp'));
+    }
+
+    public function shortlistorreject($intid, $stuid, $status)
+    {
+        $status = DB::table('internship_student')
+                        ->where(['internship_id' => $intid, 'student_id' => $stuid,])
+                        ->update(['status' => $status]);
+        
+        return back();
+    }
+
+    public function viewStuProfile($id)
+    {
+        $emp = Employer::where('id', '=', session('LoggedEmp'))->first();
+
+        $stu = Student::find($id);
+
+        return view('employer.viewStuProfile', compact('emp', 'stu'));
     }
 
     public function manage_internships()

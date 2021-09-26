@@ -20,9 +20,9 @@ class Student extends Model
         return $this->hasOne(Education::class);
     }
 
-    public function internship()
+    public function internships()
     {
-        return $this->belongsToMany(internship::class, 'applications');
+        return $this->belongsToMany(Internship::class);
     }
 }
 
