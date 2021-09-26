@@ -21,7 +21,7 @@
       <a href="{{route('home')}}" title="">Home</a>
     </li>
     <li class="menu-item-has-children">
-      <a href="#">Internships</a>
+      <a href="{{route('internship')}}">Internships</a>
     </li>
     <li class="menu-item-has-children">
       <a href="#" title="">Register</a>

@@ -15,9 +15,6 @@
                                 @if (Session::has('success'))
                                     <div class="alert alert-success">{{session::get('success')}}</div>
                                 @endif
-                                @if (Session::has('fail'))
-                                    <div class="alert alert-success">{{session::get('fail')}}</div>
-                                @endif
                                 <form method="POST" action="">
                                     @csrf
                                     <div class="cfield">

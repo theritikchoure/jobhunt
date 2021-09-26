@@ -12,12 +12,6 @@
                     <div class="col-lg-12">
                         <div class="account-popup-area signin-popup-box static">
                             <div class="account-popup">
-                                @if (Session::has('success'))
-                                    <div class="alert alert-success">{{session::get('success')}}</div>
-                                @endif
-                                @if (Session::has('fail'))
-                                    <div class="alert alert-success">{{session::get('fail')}}</div>
-                                @endif
                                 <form method="POST" action="">
                                     @csrf
                                     <div class="cfield">
@@ -46,5 +40,15 @@
         </div>
     </section>
 
-@endsection
+    @if(Session::has('success'))
+    <script>
+        toastr.options =
+        {
+            "closeButton" : false,
+            "progressBar" : true
+        }
+                toastr.success("{{ session('success') }}");
+    </script>
+    @endif
 
+@endsection

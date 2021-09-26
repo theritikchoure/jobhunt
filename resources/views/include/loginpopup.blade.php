@@ -6,13 +6,14 @@
             <h3>Student Login</h3>
             <br>
             <hr>
-            <form>
+            <form action="{{route('student.login_check')}}" method="POST">
+                @csrf
                 <div class="cfield">
-                    <input type="text" placeholder="Username" />
+                    <input type="text" name="email" placeholder="Username" />
                     <i class="la la-user"></i>
                 </div>
                 <div class="cfield">
-                    <input type="password" placeholder="********" />
+                    <input type="password" name="password" placeholder="********" />
                     <i class="la la-key"></i>
                 </div>
                 <button type="submit">Login</button>
@@ -44,6 +45,9 @@
             </form>
         </div>
     </div>
+    <!-- LOGIN POPUP End -->
+
+
     <!-- LOGIN POPUP End -->
 
     

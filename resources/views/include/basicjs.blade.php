@@ -35,4 +35,13 @@
         function closeForm() {
           document.getElementById("employerlogin").style.display = "none";
         }
+
+        function updateResume() {
+          document.getElementById("updateResume").style.display = "block";
+        }
+        
+        function updateResume() {
+          document.getElementById("updateResume").style.display = "none";
+        }
+
     </script>

@@ -70,41 +70,43 @@ Route::get('terms-and-conditions', [PageController::class, 'termcon'])->name('te
 
 Route::get('internships', [InternshipController::class, 'internships'])->name('internship');
 Route::get('internships/details/{id}', [InternshipController::class, 'internshipDetails'])->name('internshipDetails');
-Route::get('internships/apply/{id}', [InternshipController::class, 'internshipsApply'])->name('internshipApply');
+
 
 // ***************  Internships Related Routes (End)  *********************************//
 
 // ***************  Employer/Company Routes (start)  *********************************//
+    Route::middleware(['employercheck'])->group(function () {
 
-    Route::get('register/employer', [EmployerController::class, 'index'])->name('employer.register');
-    Route::post('register/employer', [EmployerController::class, 'register'])->name('employer.registers');
+        Route::get('register/employer', [EmployerController::class, 'index'])->name('employer.register');
+        Route::post('register/employer', [EmployerController::class, 'register'])->name('employer.registers');
 
-    Route::get('login/employer', [EmployerController::class, 'login'])->name('employer.login');
-    Route::post('login/employer', [EmployerController::class, 'login_check'])->name('employer.login_check');
+        Route::get('login/employer', [EmployerController::class, 'login'])->name('employer.login');
+        Route::post('login/employer', [EmployerController::class, 'login_check'])->name('employer.login_check');
 
-    Route::get('employer/dashboard', [EmployerController::class, 'dashboard'])->name('employer.dashboard');
+        Route::get('employer/dashboard', [EmployerController::class, 'dashboard'])->name('employer.dashboard');
 
-    Route::get('employer/profile', [EmployerController::class, 'showProfile'])->name('employer.profile.get');
-    Route::put('employer/profile', [EmployerController::class, 'updateProfile'])->name('employer.profile.put');
+        Route::get('employer/profile', [EmployerController::class, 'showProfile'])->name('employer.profile.get');
+        Route::put('employer/profile', [EmployerController::class, 'updateProfile'])->name('employer.profile.put');
 
-    Route::get('employer/post-internship', [InternshipController::class, 'showInternshipForm'])->name('employer.postinternshipform.get');
-    Route::post('employer/post-internship', [InternshipController::class, 'submitInternshipForm'])->name('employer.postinternshipform.post');
+        Route::get('employer/post-internship', [InternshipController::class, 'showInternshipForm'])->name('employer.postinternshipform.get');
+        Route::post('employer/post-internship', [InternshipController::class, 'submitInternshipForm'])->name('employer.postinternshipform.post');
 
-    Route::get('employer/applications', [EmployerController::class, 'allApplications'])->name('employer.allApplication');
+        Route::get('employer/applications', [EmployerController::class, 'allApplications'])->name('employer.allApplication');
 
-    Route::get('employer/applications/view/{id}', [EmployerController::class, 'viewStuApplications'])->name('employer.viewStuApplications');
-    Route::get('employer/applications/view/{intid}/{stuid}/{status}', [EmployerController::class, 'shortlistorreject'])->name('employer.shortlistorreject');
+        Route::get('employer/applications/view/{id}', [EmployerController::class, 'viewStuApplications'])->name('employer.viewStuApplications');
+        Route::get('employer/applications/view/{intid}/{stuid}/{status}', [EmployerController::class, 'shortlistorreject'])->name('employer.shortlistorreject');
 
-    Route::get('employer/applications/view/profile/{id}', [EmployerController::class, 'viewStuProfile'])->name('employer.viewStuProfile');
+        Route::get('employer/applications/view/profile/{id}', [EmployerController::class, 'viewStuProfile'])->name('employer.viewStuProfile');
 
-    Route::get('employer/all-posted-internships', [EmployerController::class, 'all_posted_internships'])->name('employer.all_posted_internships');
-    Route::get('employer/manage-internships', [EmployerController::class, 'manage_internships'])->name('employer.manage_internships');
+        Route::get('employer/all-posted-internships', [EmployerController::class, 'all_posted_internships'])->name('employer.all_posted_internships');
+        Route::get('employer/manage-internships', [EmployerController::class, 'manage_internships'])->name('employer.manage_internships');
 
-    Route::get('employer/change-password', [EmployerController::class, 'showChangePassword'])->name('employer.changePassword.get');
-    Route::put('employer/change-password', [EmployerController::class, 'updateChangePassword'])->name('employer.changePassword.put');
+        Route::get('employer/change-password', [EmployerController::class, 'showChangePassword'])->name('employer.changePassword.get');
+        Route::put('employer/change-password', [EmployerController::class, 'updateChangePassword'])->name('employer.changePassword.put');
 
-    Route::get('employer/logout', [EmployerController::class, 'logout'])->name('employer.logout');
-
+        Route::get('employer/logout', [EmployerController::class, 'logout'])->name('employer.logout');
+    
+    });
 
     // *************** Employer Forget Password Routes (Start)  *********************************//
 
@@ -119,27 +121,31 @@ Route::get('internships/apply/{id}', [InternshipController::class, 'internshipsA
 
 // ***************  Student Routes (start)  *********************************//
 
-    Route::get('register/student', [StudentController::class, 'index'])->name('student.register');
-    Route::post('register/student', [StudentController::class, 'register'])->name('student.registers');
+    Route::middleware(['studentcheck'])->group(function () {
 
-    Route::get('login/student', [StudentController::class, 'login'])->name('student.login');
-    Route::post('login/student', [StudentController::class, 'login_check'])->name('student.login_check');
+        Route::get('register/student', [StudentController::class, 'index'])->name('student.register');
+        Route::post('register/student', [StudentController::class, 'register'])->name('student.registers');
 
-    Route::get('student/dashboard', [StudentController::class, 'dashboard'])->name('student.dashboard');
+        Route::get('login/student', [StudentController::class, 'login'])->name('student.login');
+        Route::post('login/student', [StudentController::class, 'login_check'])->name('student.login_check');
 
-    Route::get('student/profile', [StudentController::class, 'showProfile'])->name('student.profile.get');
-    Route::put('student/profile', [StudentController::class, 'updateProfile'])->name('student.profile.put');
+        Route::get('student/dashboard', [StudentController::class, 'dashboard'])->name('student.dashboard');
 
-    Route::get('student/applied-internships', [StudentController::class, 'appliedInternships'])->name('student.appliedInternships');
+        Route::get('student/profile', [StudentController::class, 'showProfile'])->name('student.profile.get');
+        Route::put('student/profile', [StudentController::class, 'updateProfile'])->name('student.profile.put');
 
-    Route::get('student/shorlisted-internships', [StudentController::class, 'shortlistedInternships'])->name('student.shortlistedInternships');
+        Route::get('student/applied-internships', [StudentController::class, 'appliedInternships'])->name('student.appliedInternships');
 
-    Route::get('student/change-password', [StudentController::class, 'showChangePassword'])->name('student.changePassword.get');
-    Route::put('student/change-password', [StudentController::class, 'updateChangePassword'])->name('student.changePassword.put');
+        Route::get('student/shorlisted-internships', [StudentController::class, 'shortlistedInternships'])->name('student.shortlistedInternships');
 
+        Route::get('student/change-password', [StudentController::class, 'showChangePassword'])->name('student.changePassword.get');
+        Route::put('student/change-password', [StudentController::class, 'updateChangePassword'])->name('student.changePassword.put');
 
-    Route::get('student/logout', [EmployerController::class, 'logout'])->name('student.logout');
+        Route::get('internships/apply/{id}', [InternshipController::class, 'internshipsApply'])->name('internshipApply');
 
+        Route::get('student/logout', [StudentController::class, 'logout'])->name('student.logout');
+
+    });
     // *************** Student Forget Password Routes (Start)  *********************************//
 
     Route::get('student/forget-password', [StuFPController::class, 'showForgetPasswordForm'])->name('student.forget.password.get');

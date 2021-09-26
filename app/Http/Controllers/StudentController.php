@@ -133,7 +133,7 @@ class StudentController extends Controller
             if(Hash::check($request->password, $studentInfo->password))
             {
                 $request->session()->put('LoggedStu', $studentInfo->id);
-                return redirect('student/dashboard');
+                return redirect('student/dashboard')->with('success', 'Welcome to Your Dashboard');
             }
             else
             {
@@ -144,7 +144,8 @@ class StudentController extends Controller
 
     public function dashboard()
     {
-        return view('student.dashboard');
+        $stu = Student::where('id', '=', session('LoggedStu'))->first();
+        return view('student.dashboard', compact('stu'));
     }
 
     public function appliedInternships()
