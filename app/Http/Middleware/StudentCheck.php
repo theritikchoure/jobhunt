@@ -16,7 +16,7 @@ class StudentCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!session()->has('LoggedStu') && ($request->path() !='login/student') )
+        if(!session()->has('LoggedStu') && ($request->path() !='login/student') && ($request->path() !='register/student'))
         {
             return redirect('login/student')->with('fail', 'You must be logged in!!');
         }

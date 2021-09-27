@@ -4,7 +4,7 @@
 
 @section('menu_detail')
 
-<span><img src="/front/images/resource/mp1.jpg" alt="" /> @yield('student_name') <i class="la la-bars"></i></span>
+<span><img src="/front_asset/images/resource/mp1.jpg" alt="" /> @yield('student_name') <i class="la la-bars"></i></span>
 
 @endsection
 
@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($stu->internships as $item)
+                    @foreach ($stu->shortinternships as $item)
                     <tr>
                         <td>
                             <div class="table-list-title">

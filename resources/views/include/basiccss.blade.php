@@ -1,11 +1,14 @@
-    <link rel="stylesheet" type="text/css" href="/front/css/bootstrap-grid.css" />
-    <link rel="stylesheet" href="/front/css/icons.css">
-    <link rel="stylesheet" href="/front/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/front/css/responsive.css" />
-    <link rel="stylesheet" type="text/css" href="/front/css/chosen.css" />
-    <link rel="stylesheet" type="text/css" href="/front/css/colors/colors.css" />
-    <link rel="stylesheet" type="text/css" href="/front/css/bootstrap.css" />
+    
+    <link rel="shortcut icon" href="/front_asset/images/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/front_asset/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="/front_asset/css/icons.css">
+    <link rel="stylesheet" href="/front_asset/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/front_asset/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/front_asset/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/front_asset/css/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="/front_asset/css/colors/colors.css" />
+    <link rel="stylesheet" type="text/css" href="/front_asset/css/bootstrap.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
 

@@ -18,20 +18,20 @@
 <body>
 
     <div class="page-loading">
-        <img src="/front/images/loader.gif" alt="" />
+        <img src="/front_asset/images/loader.gif" alt="" />
     </div>
 
     <div class="theme-layout" id="scrollup">
 
         <div class="responsive-header">
             <div class="responsive-menubar">
-                <div class="res-logo"><a href="/" title=""><img src="/front/images/resource/logo.png" alt="" /></a></div>
+                <div class="res-logo"><a href="/" title=""><img src="/front_asset/images/resource/logo.png" alt="" /></a></div>
                 <div class="menu-resaction">
                     <div class="res-openmenu">
-                        <img src="/front/images/icon.png" alt="" /> Menu
+                        <img src="/front_asset/images/icon.png" alt="" /> Menu
                     </div>
                     <div class="res-closemenu">
-                        <img src="/front/images/icon2.png" alt="" /> Close
+                        <img src="/front_asset/images/icon2.png" alt="" /> Close
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="menu-sec">
                 <div class="container">
                     <div class="logo">
-                        <a href="/" title=""><img class="hidesticky" src="/front/images/resource/logo.png" alt="" /><img class="showsticky" src="/front/images/resource/logo10.png" alt="" /></a>
+                        <a href="/" title=""><img class="hidesticky" src="/front_asset/images/resource/logo.png" alt="" /><img class="showsticky" src="/front_asset/images/resource/logo10.png" alt="" /></a>
                     </div>
                     <!-- Logo -->
 
@@ -67,7 +67,7 @@
 
         <section class="overlape">
             <div class="block no-padding">
-                <div data-velocity="-.1" style="background: url(/front/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+                <div data-velocity="-.1" style="background: url(/front_asset/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
                 <div class="container fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -119,7 +119,7 @@
                                     @foreach ($internship as $item)
                                         <div class="job-listing wtabs">
                                             <div class="job-title-sec">
-                                                <div class="c-logo"> <img src="/front/images/resource/l1.png" alt="" /> </div>
+                                                <div class="c-logo"> <img src="/front_asset/images/resource/l1.png" alt="" /> </div>
                                                 <h3><a href="#" title="">{{$item->title}}</a></h3>
                                                 <span>{{$item->category}}</span>
                                             </div>
@@ -131,16 +131,8 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                <div class="pagination">
-                                    <ul>
-                                        <li class="prev"><a href=""><i class="la la-long-arrow-left"></i> Prev</a></li>
-                                        <li><a href="">1</a></li>
-                                        <li class="active"><a href="">2</a></li>
-                                        <li><a href="">3</a></li>
-                                        <li><span class="delimeter">...</span></li>
-                                        <li><a href="">14</a></li>
-                                        <li class="next"><a href="">Next <i class="la la-long-arrow-right"></i></a></li>
-                                    </ul>
+                                <div class="pagination" style="align-items: center; display:inherit;">
+                                    {!! $internship->links() !!}
                                 </div><!-- Pagination -->
                              </div>
                         </div>

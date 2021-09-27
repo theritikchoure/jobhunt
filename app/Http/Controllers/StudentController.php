@@ -163,7 +163,8 @@ class StudentController extends Controller
 
     public function shortlistedInternships()
     {
-        $stu = Student::where('id', '=', session('LoggedStu'))->first();
+        $stu = Student::where('id', '=', session('LoggedStu'))->first(); 
+        
         return view('student.shortlistedInternships', compact('stu'));
     }
 

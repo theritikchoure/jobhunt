@@ -677,6 +677,7 @@
         padding-right: 0;
         text-align: center;
         display: inline-block;
+        padding-left: 0px!important;
     }
     .job-title-sec {
         float: left;
@@ -691,6 +692,7 @@
     .job-title-sec h3 {
         float: left;
         width: 100%;
+        font-size: 20px;
     }
     .job-title-sec span {
         float: left;

@@ -10,7 +10,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="how-works">
-							<div class="how-workimg"><img src="/front/images/resource/hw1.jpg" alt="" /></div>
+							<div class="how-workimg"><img src="/front_asset/images/resource/hw1.jpg" alt="" /></div>
 							<div class="how-work-detail">
 								<div class="how-work-box">
 									<span>1</span>
@@ -21,7 +21,7 @@
 							</div>
 						</div>
 						<div class="how-works flip">
-							<div class="how-workimg"><img src="/front/images/resource/hw2.jpg" alt="" /></div>
+							<div class="how-workimg"><img src="/front_asset/images/resource/hw2.jpg" alt="" /></div>
 							<div class="how-work-detail">
 								<div class="how-work-box">
 									<span>2</span>
@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="how-works">
-							<div class="how-workimg"><img src="/front/images/resource/hw3.jpg" alt="" /></div>
+							<div class="how-workimg"><img src="/front_asset/images/resource/hw3.jpg" alt="" /></div>
 							<div class="how-work-detail">
 								<div class="how-work-box">
 									<span>3</span>

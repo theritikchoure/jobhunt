@@ -18,20 +18,20 @@
 <body>
 
     <div class="page-loading">
-        <img src="/front/images/loader.gif" alt="" />
+        <img src="/front_asset/images/loader.gif" alt="" />
     </div>
 
     <div class="theme-layout" id="scrollup">
 
         <div class="responsive-header">
             <div class="responsive-menubar">
-                <div class="res-logo"><a href="/" title=""><img src="/front/images/resource/logo.png" alt="" /></a></div>
+                <div class="res-logo"><a href="/" title=""><img src="/front_asset/images/resource/logo.png" alt="" /></a></div>
                 <div class="menu-resaction">
                     <div class="res-openmenu">
-                        <img src="/front/images/icon.png" alt="" /> Menu
+                        <img src="/front_asset/images/icon.png" alt="" /> Menu
                     </div>
                     <div class="res-closemenu">
-                        <img src="/front/images/icon2.png" alt="" /> Close
+                        <img src="/front_asset/images/icon2.png" alt="" /> Close
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="menu-sec">
                 <div class="container">
                     <div class="logo">
-                        <a href="/" title=""><img class="hidesticky" src="/front/images/resource/logo.png" alt="" /><img class="showsticky" src="/front/images/resource/logo10.png" alt="" /></a>
+                        <a href="/" title=""><img class="hidesticky" src="/front_asset/images/resource/logo.png" alt="" /><img class="showsticky" src="/front_asset/images/resource/logo10.png" alt="" /></a>
                     </div>
                     <!-- Logo -->
 
@@ -68,7 +68,7 @@
         
         <section class="overlape">
             <div class="block no-padding">
-                <div data-velocity="-.1" style="background: url(/front/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+                <div data-velocity="-.1" style="background: url(/front_asset/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
                 <div class="container fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -92,7 +92,7 @@
                          <div class="col-lg-8 column">
                              <div class="job-single-sec">
                                  <div class="job-single-head">
-                                     <div class="job-thumb"> <img src="/front/images/resource/sj.png" alt="" /> </div>
+                                     <div class="job-thumb"> <img src="/front_asset/images/resource/sj.png" alt="" /> </div>
                                      <div class="job-head-info">
                                          <h4>{{$int->employer->name}}</h4>
                                          <span>{{$int->employer->address}} {{$int->employer->city}} {{$int->employer->state}} {{$int->employer->zip_code}}</span>
@@ -165,7 +165,7 @@
                                         <div class="job-listings-sec no-border">
                                         <div class="job-listing wtabs">
                                             <div class="job-title-sec">
-                                                <div class="c-logo"> <img src="/front/images/resource/l1.png" alt="" /> </div>
+                                                <div class="c-logo"> <img src="/front_asset/images/resource/l1.png" alt="" /> </div>
                                                 <h3><a href="#" title="">Web Designer / Developer</a></h3>
                                                 <span>Massimo Artemisis</span>
                                                 <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
@@ -178,7 +178,7 @@
                                         </div>
                                         <div class="job-listing wtabs">
                                             <div class="job-title-sec">
-                                                <div class="c-logo"> <img src="/front/images/resource/l2.png" alt="" /> </div>
+                                                <div class="c-logo"> <img src="/front_asset/images/resource/l2.png" alt="" /> </div>
                                                 <h3><a href="#" title="">C Developer (Senior) C .Net</a></h3>
                                                 <span>Massimo Artemisis</span>
                                                 <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
@@ -191,7 +191,7 @@
                                         </div><!-- Job -->
                                         <div class="job-listing wtabs">
                                             <div class="job-title-sec">
-                                                <div class="c-logo"> <img src="/front/images/resource/l3.png" alt="" /> </div>
+                                                <div class="c-logo"> <img src="/front_asset/images/resource/l3.png" alt="" /> </div>
                                                 <h3><a href="#" title="">Regional Sales Manager South</a></h3>
                                                 <span>Massimo Artemisis</span>
                                                 <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
@@ -204,7 +204,7 @@
                                         </div><!-- Job -->
                                         <div class="job-listing wtabs">
                                             <div class="job-title-sec">
-                                                <div class="c-logo"> <img src="/front/images/resource/l4.png" alt="" /> </div>
+                                                <div class="c-logo"> <img src="/front_asset/images/resource/l4.png" alt="" /> </div>
                                                 <h3><a href="#" title="">Marketing Dairector</a></h3>
                                                 <span>Massimo Artemisis</span>
                                                 <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>

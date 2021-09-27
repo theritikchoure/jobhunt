@@ -33,9 +33,9 @@ use Illuminate\Support\Facades\Route;
 //     dd('send mail successfully !!');
 // });
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 
 
 // Route::get('/test', function () {
@@ -57,7 +57,7 @@ Route::get('sendattachmentemail',[MailController::class, 'attachment_email']);
 
 
 // ***************  Website Basic Page Routes (start)  *********************************//
-
+Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('about-us', [PageController::class, 'about'])->name('about');
 Route::get('contact-us', [PageController::class, 'contact'])->name('contact');
 Route::get('faq', [PageController::class, 'faq'])->name('faq');
@@ -100,6 +100,11 @@ Route::get('internships/details/{id}', [InternshipController::class, 'internship
 
         Route::get('employer/all-posted-internships', [EmployerController::class, 'all_posted_internships'])->name('employer.all_posted_internships');
         Route::get('employer/manage-internships', [EmployerController::class, 'manage_internships'])->name('employer.manage_internships');
+
+        Route::get('employer/internships/delete/{id}', [EmployerController::class, 'deleteInternship'])->name('employer.deleteInternship');
+
+        Route::get('employer/internships/edit/{id}', [InternshipController::class, 'editInternship'])->name('employer.editInternship');
+        Route::put('employer/internships/edit/{id}', [InternshipController::class, 'updateInternship'])->name('employer.updateInternship');
 
         Route::get('employer/change-password', [EmployerController::class, 'showChangePassword'])->name('employer.changePassword.get');
         Route::put('employer/change-password', [EmployerController::class, 'updateChangePassword'])->name('employer.changePassword.put');

@@ -17,7 +17,7 @@
       <a href="{{route('employer.postinternshipform.get')}}">Post Internship</a>
     </li>
     @else
-    <li class="menu-item-has-children">
+    <li class="enu-item-has-children">
       <a href="{{route('home')}}" title="">Home</a>
     </li>
     <li class="menu-item-has-children">

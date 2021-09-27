@@ -120,9 +120,6 @@ class EmployerController extends Controller
 
     public function dashboard()
     {
-        // $int = Internship::where('employer_id', '=', session('LoggedEmp'))->
-        //                    orderBy('id', 'desc') ->get();
-
         $emp = Employer::where('id', '=', session('LoggedEmp'))->first();
         return view('employer.dashboard', compact('emp'));
     }
@@ -237,6 +234,15 @@ class EmployerController extends Controller
                            orderBy('id', 'desc') ->get();
 
         return view('employer.manage_internship', compact('int'));
+    }
+
+    public function deleteInternship($id)
+    {
+        $int = Internship::find($id);
+        $int->status = 5;
+        $int->save();
+
+        return back()->with('success', 'Internship Deleted Successfully');
     }
 
     public function showChangePassword()

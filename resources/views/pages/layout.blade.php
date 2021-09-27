@@ -18,20 +18,20 @@
 <body>
 
     <div class="page-loading">
-        <img src="/front/images/loader.gif" alt="" />
+        <img src="/front_asset/images/loader.gif" alt="" />
     </div>
 
     <div class="theme-layout" id="scrollup">
 
         <div class="responsive-header">
             <div class="responsive-menubar">
-                <div class="res-logo"><a href="/" title=""><img src="/front/images/resource/logo.png" alt="" /></a></div>
+                <div class="res-logo"><a href="/" title=""><img src="/front_asset/images/resource/logo.png" alt="" /></a></div>
                 <div class="menu-resaction">
                     <div class="res-openmenu">
-                        <img src="/front/images/icon.png" alt="" /> Menu
+                        <img src="/front_asset/images/icon.png" alt="" /> Menu
                     </div>
                     <div class="res-closemenu">
-                        <img src="/front/images/icon2.png" alt="" /> Close
+                        <img src="/front_asset/images/icon2.png" alt="" /> Close
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="menu-sec">
                 <div class="container">
                     <div class="logo">
-                        <a href="/" title=""><img class="hidesticky" src="/front/images/resource/logo10.png" alt="" /><img class="showsticky" src="/front/images/resource/logo10.png" alt="" /></a>
+                        <a href="/" title=""><img class="hidesticky" src="/front_asset/images/resource/logo10.png" alt="" /><img class="showsticky" src="/front_asset/images/resource/logo10.png" alt="" /></a>
                     </div>
                     <!-- Logo -->
 

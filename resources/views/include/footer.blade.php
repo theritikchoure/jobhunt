@@ -6,7 +6,7 @@
                     <div class="widget">
                         <div class="about_widget">
                             <div class="logo">
-                                <a href="/" title=""><img src="/front/images/resource/logo.png" alt="" /></a>
+                                <a href="/" title=""><img src="/front_asset/images/resource/logo.png" alt="" /></a>
                             </div>
                             <span>Collin Street West, Victor 8007, Australia.</span>
                             <span>+1 246-345-0695</span>
@@ -68,8 +68,8 @@
                 <div class="col-lg-3 column">
                     <div class="widget">
                         <div class="download_widget">
-                            <a href="/" title=""><img src="/front/images/resource/dw1.png" alt="" /></a>
-                            <a href="/" title=""><img src="/front/images/resource/dw2.png" alt="" /></a>
+                            <a href="/" title=""><img src="/front_asset/images/resource/dw1.png" alt="" /></a>
+                            <a href="/" title=""><img src="/front_asset/images/resource/dw2.png" alt="" /></a>
                         </div>
                     </div>
                 </div>

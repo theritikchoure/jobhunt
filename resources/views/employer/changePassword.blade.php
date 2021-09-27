@@ -4,7 +4,7 @@
 
 @section('menu_detail')
 
-<span><img src="/front/images/resource/profile.jpg" alt="" /> @yield('employer_name') <i class="la la-angle-down"></i></span>
+<span><img src="/front_asset/images/resource/profile.jpg" alt="" /> @yield('employer_name') <i class="la la-angle-down"></i></span>
     
 @endsection
 

@@ -132,54 +132,55 @@ class InternshipController extends Controller
         return back()->with('success', 'Applied for this Internship');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Internship $internship)
+
+    public function editInternship($id)
     {
-        //
+        $int = Internship::find($id);
+        $emp = Employer::where('id', '=', session('LoggedEmp'))->first();
+        return view('employer.editInternship', compact('int', 'emp'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Internship $internship)
+    public function updateInternship(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+            'salary' => 'required|integer',
+            'openings' => 'required|integer',
+            'duration' => 'required',
+            'last_date' => 'required'
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Internship $internship)
-    {
-        //
-    }
+        $emp = Employer::where('id', '=', session('LoggedEmp'))->first();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Internship $internship)
-    {
-        //
+        $job = Internship::find($id);
+
+        $job->title = $request->title;
+        $job->description = $request->description;
+        $job->category = $request->category;
+        $job->salary = $request->salary;
+        $job->openings = $request->openings;
+        $job->duration = $request->duration;
+        $job->last_date = $request->last_date;
+
+        $internship = $emp->internship()->save($job);
+
+        
+        if($internship)
+        {
+            return back()->with('success', 'Internship is Updated Successfully!!');
+        }
+        else
+        {
+            return back()->with('fail', 'something went wrong!');
+        }
+
     }
 
     public function internships()
     {
-        $internship = Internship::all();
+        $internship = Internship::paginate(2);
 
         return view('pages.internships', compact('internship'));
     }

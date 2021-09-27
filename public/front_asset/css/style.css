@@ -2260,7 +2260,7 @@ Author:         Creative Layer
      float: left;
      width: 100%;
      text-align: center;
-     padding: 40px 0;
+     padding: 40px 40px;
      background: #8b91dd;
      -webkit-transition: all 0.4s ease 0s;
      -moz-transition: all 0.4s ease 0s;

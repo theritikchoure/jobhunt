@@ -15,7 +15,7 @@
 <body>
 
 <div class="page-loading">
-	<img src="/front/images/loader.gif" alt="" />
+	<img src="/front_asset/images/loader.gif" alt="" />
 	<span>Skip Loader</span>
 </div>
 
@@ -23,13 +23,13 @@
 	
 	<div class="responsive-header">
 		<div class="responsive-menubar">
-			<div class="res-logo"><a href="{{route('home')}}" title=""><img src="/front/images/resource/logo.png" alt="" /></a></div>
+			<div class="res-logo"><a href="{{route('home')}}" title=""><img src="/front_asset/images/resource/logo.png" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
-					<img src="/front/images/icon.png" alt="" /> Menu
+					<img src="/front_asset/images/icon.png" alt="" /> Menu
 				</div>
 				<div class="res-closemenu">
-					<img src="/front/images/icon2.png" alt="" /> Close
+					<img src="/front_asset/images/icon2.png" alt="" /> Close
 				</div>
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 		<div class="menu-sec">
 			<div class="container">
 				<div class="logo">
-					<a href="{{route('home')}}" title=""><img src="/front/images/resource/logo.png" alt="" /></a>
+					<a href="{{route('home')}}" title=""><img src="/front_asset/images/resource/logo.png" alt="" /></a>
 				</div><!-- Logo -->
 				<div class="btns-profiles-sec">
 					@section('menu_detail')
@@ -72,7 +72,7 @@
 
 	<section class="overlape">
 		<div class="block no-padding">
-			<div data-velocity="-.1" style="background: url(/front/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div data-velocity="-.1" style="background: url(/front_asset/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
 			<div class="container fluid">
 				<div class="row">
 					<div class="col-lg-12">

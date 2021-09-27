@@ -16,7 +16,7 @@ class EmployerCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!session()->has('LoggedEmp') && ($request->path() !='login/employer') )
+        if(!session()->has('LoggedEmp') && ($request->path() !='login/employer') && ($request->path() !='register/employer'))
         {
             return redirect('login/employer')->with('fail', 'You must be logged in!!');
         }

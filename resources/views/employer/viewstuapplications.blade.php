@@ -18,7 +18,7 @@
                 @foreach ($int->students as $item)
                 <div class="emply-resume-list">
                     <div class="emply-resume-thumb">
-                        <img src="/front/images/resource/er1.jpg" alt="" />
+                        <img src="/front_assset/images/resource/er1.jpg" alt="" />
                     </div>
                     <div class="emply-resume-info">
                         <h3><a href="#" title="">{{$item->first_name}}</a></h3>

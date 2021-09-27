@@ -22,7 +22,11 @@ class Student extends Model
 
     public function internships()
     {
-        return $this->belongsToMany(Internship::class);
+        return $this->belongsToMany(Internship::class)->withPivot('status');
+    }
+
+    function shortinternships() {
+        return $this->belongsToMany(Internship::class)->wherePivot('status', 2);
     }
 }
 

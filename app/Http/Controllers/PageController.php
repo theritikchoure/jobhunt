@@ -2,10 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Internship;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function index(Request $request)
+    {
+        if($request->has('search'))
+        {
+            $search = $request->search;
+            $int = Internship::where('title', 'like', '%'.$search.'%')
+                             ->orwhere('category', 'like', '%'.$search.'%')  
+                             ->orderby('id', 'desc')->paginate(10);
+        }
+        else
+        {
+            $int = Internship::orderBy('id', 'desc')->paginate(10);
+        }
+        return view('welcome', compact('int'));
+    }
     public function about()
     {
         return view('pages.about');

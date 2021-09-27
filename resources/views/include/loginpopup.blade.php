@@ -16,6 +16,10 @@
                     <input type="password" name="password" placeholder="********" />
                     <i class="la la-key"></i>
                 </div>
+                <p class="remember-label">
+                    <a href="{{route('student.register')}}" title="">Don't have an account?</a>
+                </p>
+                <a href="{{route('employer.forget.password.get')}}" title="">Forgot Password?</a>
                 <button type="submit">Login</button>
             </form>
         </div>
@@ -40,6 +44,9 @@
                     <input type="password" name="password" placeholder="********" />
                     <i class="la la-key"></i>
                 </div>
+                <p class="remember-label">
+                    <a href="{{route('employer.register')}}" title="">Don't have an account?</a>
+                </p>
                 <a href="{{route('employer.forget.password.get')}}" title="">Forgot Password?</a>
                 <button type="submit">Login</button>
             </form>

@@ -9,6 +9,8 @@ class Internship extends Model
 {
     protected $table = 'internships';
 
+    protected $fillable = ['title', 'foo', 'bar'];
+
     use HasFactory;
 
     public function category()
@@ -29,5 +31,9 @@ class Internship extends Model
     public function students()
     {
         return $this->belongsToMany(Student::class);
+    }
+
+    function shortstudenst() {
+        return $this->belongsToMany(Student::class)->wherePivot('status', 2);
     }
 }
