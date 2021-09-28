@@ -33,9 +33,9 @@ use Illuminate\Support\Facades\Route;
 //     dd('send mail successfully !!');
 // });
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
 
 
 // Route::get('/test', function () {
@@ -174,12 +174,12 @@ Route::post('admin/login', [AdminController::class, 'login_check'])->name('admin
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 Route::get('admin/categories', [CategoryController::class, 'category'])->name('admin.category');
-Route::get('/admin/category/add', [CategoryController::class, 'category_add'])->name('admin.category.add');
-Route::post('/admin/category/add', [CategoryController::class, 'category_save'])->name('admin.category.save');
+Route::post('admin/categories', [CategoryController::class, 'category_save'])->name('admin.addCategory');
 
-Route::get('/admin/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
-Route::put('/admin/category/edit/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
+Route::put('/admin/categories/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
 
-Route::get('/admin/category/status/{id}/{value}', [CategoryController::class, 'status'])->name('admin.category.status');
+Route::get('/admin/categories/delete/{id}', [CategoryController::class, 'delete'])->name('admin.category.delete');
+
+Route::get('/admin/categories/status/{id}/{value}', [CategoryController::class, 'status'])->name('admin.category.status');
 
 // ***************  Admin Routes (End)  *********************************//
