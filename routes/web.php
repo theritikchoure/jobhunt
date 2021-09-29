@@ -33,9 +33,9 @@ use Illuminate\Support\Facades\Route;
 //     dd('send mail successfully !!');
 // });
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
+// Route::get('/admin/dashboard', function () {
+//     return view('admin.dashboard');
+// })->name('admin.dashboard');
 
 
 // Route::get('/test', function () {
@@ -165,13 +165,18 @@ Route::get('internships/details/{id}', [InternshipController::class, 'internship
 
 // ***************  Admin Routes (start)  *********************************//
 
-Route::get('admin/register', [AdminController::class, 'register'])->name('admin.register');
-Route::post('admin/register', [AdminController::class, 'registration'])->name('admin.registration');
-
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [AdminController::class, 'login_check'])->name('admin.login_check');
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+Route::get('admin/all-employers', [AdminController::class, 'allEmployers'])->name('admin.allEmployers');
+Route::get('admin/pending-employers', [AdminController::class, 'pendingEmployers'])->name('admin.pendingEmployers');
+Route::get('admin/employers/{id}/{status}', [AdminController::class, 'employerStatus'])->name('admin.employerStatus');
+
+Route::get('admin/all-internships', [AdminController::class, 'allInternships'])->name('admin.allInternships');
+Route::get('admin/pending-internships', [AdminController::class, 'pendingInternships'])->name('admin.pendingInternships');
+Route::get('admin/internships/{id}/{status}', [AdminController::class, 'internshipStatus'])->name('admin.internshipStatus');
 
 Route::get('admin/categories', [CategoryController::class, 'category'])->name('admin.category');
 Route::post('admin/categories', [CategoryController::class, 'category_save'])->name('admin.addCategory');

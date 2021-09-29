@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Employer;
+use App\Models\Internship;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -40,7 +42,7 @@ class AdminController extends Controller
     public function login_check(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email|exists:admins,email',
             'password'=> 'required',
         ]);
 
@@ -66,12 +68,58 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        if(session()->has('LoggedAdmin'))
-        {
-            $admin = Admin::where('id', '=', session('LoggedAdmin'))->first();
-        }
+        // if(session()->has('LoggedAdmin'))
+        // {
+        //     $admin = Admin::where('id', '=', session('LoggedAdmin'))->first();
+        // }
 
-        return view('admin.dashboard', compact('admin'));
+        return view('admin.dashboard');
+    }
+
+    public function allEmployers()
+    {
+        $emp = Employer::whereNotIn('status', [1])
+                        ->orderBy('updated_at', 'desc')
+                        ->get();
+        return view('admin.allEmployers', compact('emp'));
+    }
+
+    public function pendingEmployers()
+    {
+        $emp = Employer::where('status', [1])->orderBy('updated_at', 'desc')->get();
+        return view('admin.pendingEmployers', compact('emp'));
+    }
+
+    public function employerStatus($id, $status)
+    {
+        $emp = Employer::find($id);
+
+        $emp->status = $status;
+        $emp->save();
+        return back();
+    }
+
+    public function allInternships()
+    {
+        $int = Internship::whereNotIn('status', [1])
+                        ->orderBy('updated_at', 'desc')
+                        ->get();
+        return view('admin.allInternships', compact('int'));
+    }
+
+    public function pendingInternships()
+    {
+        $int = Internship::where('status', [1])->orderBy('updated_at', 'desc')->get();
+        return view('admin.pendingInternships', compact('int'));
+    }
+
+    public function internshipStatus($id, $status)
+    {
+        $int = Internship::find($id);
+
+        $int->status = $status;
+        $int->save();
+        return back();
     }
 
 }

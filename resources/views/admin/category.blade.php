@@ -8,7 +8,7 @@
     <div class="col-xl-6 col-xxl-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Button addons</h4>
+                <h4 class="card-title">All Categories</h4>
             </div>
             <div class="card-body">
                 <div class="basic-form">

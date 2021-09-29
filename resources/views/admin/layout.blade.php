@@ -17,6 +17,9 @@
     <!-- Toastr -->
     <link rel="stylesheet" href="/admin_asset/vendor/toastr/css/toastr.min.css">
 
+    <!-- Datatable -->
+    <link href="/admin_asset/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -155,10 +158,12 @@
                                         <i class="icon-envelope-open"></i>
                                         <span class="ml-2">Inbox </span>
                                     </a>
-                                    <a href="/admin_asset/page-login.html" class="dropdown-item">
-                                        <i class="icon-key"></i>
-                                        <span class="ml-2">Logout </span>
-                                    </a>
+                                    <form action="" method="post">
+                                        <a href="/admin_asset/page-login.html" method='post' class="dropdown-item">
+                                            <i class="icon-key"></i>
+                                            <span class="ml-2">Logout </span>
+                                        </a>
+                                    </form>
                                 </div>
                             </li>
                         </ul>
@@ -264,6 +269,10 @@
 
     <!-- All init script -->
     <script src="/admin_asset/js/plugins-init/toastr-init.js"></script>
+
+    <!-- Datatable -->
+    <script src="/admin_asset/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="/admin_asset/js/plugins-init/datatables.init.js"></script>
 
 </body>
 
