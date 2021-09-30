@@ -62,7 +62,7 @@ Employers can also update his profile, change the password, and forget the passw
 
 ### Home Page
 
-<img src="/public/screenshots/admin-dashboard.png">
+<img src="/public/screenshots/home-page.png">
 
 ### Student Registration Page
 
