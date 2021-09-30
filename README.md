@@ -62,7 +62,7 @@ Employers can also update his profile, change the password, and forget the passw
 
 ### Home Page
 
-![App Screenshot](/screenshots/home-page.png)
+<img src="/public/screenshots/admin-dashboard.png">
 
 ### Student Registration Page
 
