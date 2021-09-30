@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmpFPController;
 use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\InternshipController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\MailController;
@@ -165,7 +166,7 @@ Route::get('internships/details/{id}', [InternshipController::class, 'internship
 
 // ***************  Admin Routes (start)  *********************************//
 
-Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::get('jh-{adminlogin}', [AdminController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [AdminController::class, 'login_check'])->name('admin.login_check');
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -174,17 +175,24 @@ Route::get('admin/all-employers', [AdminController::class, 'allEmployers'])->nam
 Route::get('admin/pending-employers', [AdminController::class, 'pendingEmployers'])->name('admin.pendingEmployers');
 Route::get('admin/employers/{id}/{status}', [AdminController::class, 'employerStatus'])->name('admin.employerStatus');
 
+Route::get('admin/employers-export', [ExportController::class, 'employerExport'])->name('admin.employerExport');
+
 Route::get('admin/all-internships', [AdminController::class, 'allInternships'])->name('admin.allInternships');
 Route::get('admin/pending-internships', [AdminController::class, 'pendingInternships'])->name('admin.pendingInternships');
 Route::get('admin/internships/{id}/{status}', [AdminController::class, 'internshipStatus'])->name('admin.internshipStatus');
+
+Route::get('admin/all-students', [AdminController::class, 'allStudents'])->name('admin.allStudents');
+
+Route::get('admin/students-export', [ExportController::class, 'employerExport'])->name('admin.employerExport');
 
 Route::get('admin/categories', [CategoryController::class, 'category'])->name('admin.category');
 Route::post('admin/categories', [CategoryController::class, 'category_save'])->name('admin.addCategory');
 
 Route::put('/admin/categories/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
-
 Route::get('/admin/categories/delete/{id}', [CategoryController::class, 'delete'])->name('admin.category.delete');
-
 Route::get('/admin/categories/status/{id}/{value}', [CategoryController::class, 'status'])->name('admin.category.status');
+
+Route::get('admin/profile', [AdminController::class, 'adminProfile'])->name('admin.adminProfile');
+Route::put('/admin/profile/change-login-url', [AdminController::class, 'adminChangeLoginURL'])->name('admin.adminChangeLoginURL');
 
 // ***************  Admin Routes (End)  *********************************//

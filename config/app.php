@@ -136,6 +136,8 @@ return [
 
     'providers' => [
 
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -189,6 +191,8 @@ return [
     */
 
     'aliases' => [
+
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,

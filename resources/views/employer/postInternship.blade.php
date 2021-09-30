@@ -34,7 +34,7 @@
                     <div class="col-lg-12">
                         <span class="pf-title">Description</span>
                         <div class="pf-field">
-                            <textarea name="description">Selected intern's day-to-day responsibilities include: 
+                            <textarea name="description" id="description">Selected intern's day-to-day responsibilities include: 
 
 1.
 2.
@@ -47,9 +47,9 @@
                         <div class="pf-field">
                             <select data-placeholder="Please Select Specialism" name="category" class="chosen">
                                <option>Select Internship Category</option>
-                               <option value="Web Designing">Web Designing</option>
-                               <option value="Art & Culture">Art & Culture</option>
-                               <option value="Reading & Writing">Reading & Writing</option>
+                               @foreach ($cat as $cat)
+                                    <option value="{{$cat->name}}">{{$cat->name}}</option>
+                               @endforeach
                            </select>
                         </div>
                     </div>
@@ -118,4 +118,23 @@
                 toastr.success("{{ session('success') }}");
     </script>
 @endif
+
+<script>
+    tinymce.init({
+        selector: 'textarea#description',
+        height: 500,
+        menubar: false,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar: 'undo redo | formatselect | ' +
+        'bold italic backcolor | alignleft aligncenter ' +
+        'alignright alignjustify | bullist numlist outdent indent | ' +
+        'removeformat | help',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    });
+
+</script>
 @endsection

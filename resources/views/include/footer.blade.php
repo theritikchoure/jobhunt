@@ -50,16 +50,13 @@
                 </div>
                 <div class="col-lg-2 column">
                     <div class="widget">
-                        <h3 class="footer-title">Find Jobs</h3>
+                        <h3 class="footer-title">Find Internship</h3>
                         <div class="link_widgets">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <a href="#" title="">US Jobs</a>
-                                    <a href="#" title="">Canada Jobs</a>
-                                    <a href="#" title="">UK Jobs</a>
-                                    <a href="#" title="">Emplois en Fnce</a>
-                                    <a href="#" title="">Jobs in Deuts</a>
-                                    <a href="#" title="">Vacatures China</a>
+                                    @foreach ($cat as $item)
+                                        <a href="/internship/{{$item->slug}}" title="">{{$item->name}}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

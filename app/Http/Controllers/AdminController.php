@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Employer;
 use App\Models\Internship;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -34,9 +35,17 @@ class AdminController extends Controller
         return redirect('admin/login')->with('success', 'You have Registered Successfully!!');
     }
 
-    public function login()
+    public function login($adminlogin)
     {
-        return view('admin.login');
+        $adm = Admin::first();
+        if($adminlogin == $adm->login)
+        {
+            return view('admin.login');
+        }
+        else
+        {
+            abort(404);
+        }
     }
 
     public function login_check(Request $request)
@@ -119,6 +128,29 @@ class AdminController extends Controller
 
         $int->status = $status;
         $int->save();
+        return back();
+    }
+
+    public function allStudents()
+    {
+        $stu = Student::orderBy('updated_at', 'desc')->get();
+        return view('admin.allStudents', compact('stu'));
+    }
+
+    public function adminProfile()
+    {
+        $login = Admin::first();
+        return view('admin.adminProfile', compact('login'));
+    }
+
+    public function adminChangeLoginURL(Request $request)
+    {
+        $login = Admin::first();
+
+        $login->login = $request->login;
+
+        $login->save();
+        
         return back();
     }
 

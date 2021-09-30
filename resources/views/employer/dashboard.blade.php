@@ -4,7 +4,7 @@
 
 @section('menu_detail')
 
-<span><img src="/images_asset/employer/{{$emp->logo}}" width="50" height="50" alt="" /> @yield('employer_name') <i class="la la-angle-down"></i></span>
+<span><img src="/images/employer/{{$emp->logo}}" width="50" height="50" alt="" /> @yield('employer_name') <i class="la la-angle-down"></i></span>
     
 @endsection
 

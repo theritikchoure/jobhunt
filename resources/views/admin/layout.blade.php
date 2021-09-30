@@ -48,7 +48,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="{{route('admin.dashboard')}}" class="brand-logo">
                 <img class="logo-abbr" src="/admin_asset/images/logo.png" alt="">
                 <img class="logo-compact" src="/admin_asset/images/logo-text.png" alt="">
                 <img class="brand-title" src="/admin_asset/images/logo-text.png" alt="">
@@ -150,7 +150,7 @@
                                     <i class="mdi mdi-account"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="/admin_asset/app-profile.html" class="dropdown-item">
+                                    <a href="{{route('admin.adminProfile')}}" class="dropdown-item">
                                         <i class="icon-user"></i>
                                         <span class="ml-2">Profile </span>
                                     </a>
@@ -161,7 +161,7 @@
                                     <form action="" method="post">
                                         <a href="/admin_asset/page-login.html" method='post' class="dropdown-item">
                                             <i class="icon-key"></i>
-                                            <span class="ml-2">Logout </span>
+                                            <span type="submit" class="ml-2">Logout </span>
                                         </a>
                                     </form>
                                 </div>

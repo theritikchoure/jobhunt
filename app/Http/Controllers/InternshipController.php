@@ -19,8 +19,8 @@ class InternshipController extends Controller
     {
         // $cat = Category::orderBy('name', 'asc')->get();
         $emp = Employer::where('id', '=', session('LoggedEmp'))->first();
-
-        return view('employer.postInternship', compact('emp'));
+        $cat = Category::where('status', '1')->get();
+        return view('employer.postInternship', compact('emp', 'cat'));
     }
 
     /**
