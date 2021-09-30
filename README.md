@@ -1,9 +1,11 @@
-<p align="center"><a href="https://github.com/theritikchoure/jobhunt" target="_blank"><img src="/front_asset/images/resource/logo.png" width="400"></a></p>
+<p align="center"><a href="https://github.com/theritikchoure/jobhunt" target="_blank"><img src="/public/front_asset/images/resource/logo.png" width="400"></a></p>
 
 
 # Job Board (JobHunt)
 
 In the Online Internship Portal System, I use Laravel Framework and MySQL database. This is the project which keeps records of the employer, students, and administrator. The online internship portal system has three modules i.e. Student, Employer and Admin.
+
+This project is under development
 
 
 ## Admin Modules
@@ -66,23 +68,23 @@ Employers can also update his profile, change the password, and forget the passw
 
 ### Student Registration Page
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="/public/screenshots/student-registration-page.png">
 
 ### Student Dashboard Page
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="/public/screenshots/student-dashboard-page.png">
 
 ### Employer Registration Page
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="/public/screenshots/employer-registration-page.png">
 
 ### Employer Dashboard Page
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="/public/screenshots/employer-dashboard-page.png">
 
 ### Admin Dashboard Page
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+under development!!
 
 
 ## 🚀 About Me
