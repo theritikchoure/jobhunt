@@ -99,13 +99,18 @@
                         </div>
                     </div>    
                     <div class="col-lg-12" style="margin-bottom:25px;">
-                        <button type="submit">Post Intenship</button>
+                        @if ($emp->status == 0)
+                            <button type="submit">Post Intenship</button>
+                        @else
+                            <button disabled>Not Allow to Post</button>
+                        @endif
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
 
 @if(Session::has('success'))
     <script>

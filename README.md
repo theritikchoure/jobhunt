@@ -84,8 +84,7 @@ Employers can also update his profile, change the password, and forget the passw
 
 ### Admin Dashboard Page
 
-under development!!
-
+<img src="/public/screenshots/admin-dashboard-page.png">
 
 ## 🚀 About Me
 I'm an enthusiast laravel learner...

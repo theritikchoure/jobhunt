@@ -150,7 +150,7 @@
                         <div class="col-lg-12">
                             <div class="simple-text">
                                 <h3>Gat a question?</h3>
-                                <span>We're here to help. Check out our FAQs, send us an email or call us at 1 (800) 555-5555</span>
+                                <span>We're here to help. Check out our FAQs, send us an email or call us at +91 1234567890</span>
                             </div>
                         </div>
                     </div>

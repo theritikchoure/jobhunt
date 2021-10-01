@@ -20,7 +20,7 @@ class PageController extends Controller
         }
         else
         {
-            $int = Internship::orderBy('id', 'desc')->paginate(10);
+            $int = Internship::where('status', '0')->orderBy('id', 'desc')->paginate(10);
             $cat = Category::where('status', '1')->limit(5)->get();
         }
         return view('welcome', compact('int', 'cat'));

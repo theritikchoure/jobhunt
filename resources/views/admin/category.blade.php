@@ -19,7 +19,7 @@
                         @method('PUT')
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Category Name</label>
+                                <label>#{{ $loop->iteration}}  Category Name</label>
                                 <input type="text" class="form-control" name="name" value="{{$item->name}}">
                             </div>
                             <div class="form-group col-md-6">

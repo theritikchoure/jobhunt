@@ -21,6 +21,4 @@
         class="nav-text">Students</span></a></li>
     <li><a href="{{route('admin.category')}}" aria-expanded="false"><i class="icon icon-check-square-11"></i><span
         class="nav-text">Category</span></a></li>
-    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-attach-87"></i><span
-        class="nav-text">Perks</span></a></li>
 </ul>

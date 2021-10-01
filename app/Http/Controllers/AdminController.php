@@ -82,7 +82,9 @@ class AdminController extends Controller
         //     $admin = Admin::where('id', '=', session('LoggedAdmin'))->first();
         // }
 
-        return view('admin.dashboard');
+        $emp = Employer::orderBy('updated_at', 'desc')->limit(5)->get();
+        $int = Internship::orderBy('updated_at', 'desc')->limit(5)->get();
+        return view('admin.dashboard', compact('emp', 'int'));
     }
 
     public function allEmployers()

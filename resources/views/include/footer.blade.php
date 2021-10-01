@@ -8,9 +8,9 @@
                             <div class="logo">
                                 <a href="/" title=""><img src="/front_asset/images/resource/logo.png" alt="" /></a>
                             </div>
-                            <span>Collin Street West, Victor 8007, Australia.</span>
-                            <span>+1 246-345-0695</span>
-                            <span>info@jobhunt.com</span>
+                            <span>Kolar Road, Bhopal</span>
+                            <span>+91 6261539526</span>
+                            <span>ritvikchoure65@gmail.com</span>
                             <div class="social">
                                 <a href="#" title=""><i class="la la-facebook"></i></a>
                                 <a href="#" title=""><i class="la la-twitter"></i></a>
@@ -54,9 +54,9 @@
                         <div class="link_widgets">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    @foreach ($cat as $item)
-                                        <a href="/internship/{{$item->slug}}" title="">{{$item->name}}</a>
-                                    @endforeach
+                                    {{-- @foreach ($cat as $item)
+                                        <a href="/internship/" title="">{{$item->name}}</a>
+                                    @endforeach --}}
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
         </div>
     </div>
     <div class="bottom-line">
-        <span>© 2018 Jobhunt All rights reserved. Design by Creative Layers</span>
+        <span> Used Only for Learning Purpose by <a href="https://github.com/theritikchoure" style="color:white;" target="_blank"> Ritik Chourasiya </a>. Copyright © Design by <a href="https://creativelayers.net/" style="color:white;" target="_blank">Creative Layers</a></span>
         <a href="#scrollup" class="scrollup" title=""><i class="la la-arrow-up"></i></a>
     </div>
 </footer>

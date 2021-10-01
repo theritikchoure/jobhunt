@@ -166,33 +166,36 @@ Route::get('internships/details/{id}', [InternshipController::class, 'internship
 
 // ***************  Admin Routes (start)  *********************************//
 
-Route::get('jh-{adminlogin}', [AdminController::class, 'login'])->name('admin.login');
-Route::post('admin/login', [AdminController::class, 'login_check'])->name('admin.login_check');
+Route::middleware(['admincheck'])->group(function () {
 
-Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('jh-{adminlogin}', [AdminController::class, 'login'])->name('admin.login');
+    Route::post('admin/login', [AdminController::class, 'login_check'])->name('admin.login_check');
 
-Route::get('admin/all-employers', [AdminController::class, 'allEmployers'])->name('admin.allEmployers');
-Route::get('admin/pending-employers', [AdminController::class, 'pendingEmployers'])->name('admin.pendingEmployers');
-Route::get('admin/employers/{id}/{status}', [AdminController::class, 'employerStatus'])->name('admin.employerStatus');
+    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-Route::get('admin/employers-export', [ExportController::class, 'employerExport'])->name('admin.employerExport');
+    Route::get('admin/all-employers', [AdminController::class, 'allEmployers'])->name('admin.allEmployers');
+    Route::get('admin/pending-employers', [AdminController::class, 'pendingEmployers'])->name('admin.pendingEmployers');
+    Route::get('admin/employers/{id}/{status}', [AdminController::class, 'employerStatus'])->name('admin.employerStatus');
 
-Route::get('admin/all-internships', [AdminController::class, 'allInternships'])->name('admin.allInternships');
-Route::get('admin/pending-internships', [AdminController::class, 'pendingInternships'])->name('admin.pendingInternships');
-Route::get('admin/internships/{id}/{status}', [AdminController::class, 'internshipStatus'])->name('admin.internshipStatus');
+    Route::get('admin/employers-export', [ExportController::class, 'employerExport'])->name('admin.employerExport');
 
-Route::get('admin/all-students', [AdminController::class, 'allStudents'])->name('admin.allStudents');
+    Route::get('admin/all-internships', [AdminController::class, 'allInternships'])->name('admin.allInternships');
+    Route::get('admin/pending-internships', [AdminController::class, 'pendingInternships'])->name('admin.pendingInternships');
+    Route::get('admin/internships/{id}/{status}', [AdminController::class, 'internshipStatus'])->name('admin.internshipStatus');
 
-Route::get('admin/students-export', [ExportController::class, 'employerExport'])->name('admin.employerExport');
+    Route::get('admin/all-students', [AdminController::class, 'allStudents'])->name('admin.allStudents');
 
-Route::get('admin/categories', [CategoryController::class, 'category'])->name('admin.category');
-Route::post('admin/categories', [CategoryController::class, 'category_save'])->name('admin.addCategory');
+    Route::get('admin/students-export', [ExportController::class, 'employerExport'])->name('admin.employerExport');
 
-Route::put('/admin/categories/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
-Route::get('/admin/categories/delete/{id}', [CategoryController::class, 'delete'])->name('admin.category.delete');
-Route::get('/admin/categories/status/{id}/{value}', [CategoryController::class, 'status'])->name('admin.category.status');
+    Route::get('admin/categories', [CategoryController::class, 'category'])->name('admin.category');
+    Route::post('admin/categories', [CategoryController::class, 'category_save'])->name('admin.addCategory');
 
-Route::get('admin/profile', [AdminController::class, 'adminProfile'])->name('admin.adminProfile');
-Route::put('/admin/profile/change-login-url', [AdminController::class, 'adminChangeLoginURL'])->name('admin.adminChangeLoginURL');
+    Route::put('/admin/categories/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
+    Route::get('/admin/categories/delete/{id}', [CategoryController::class, 'delete'])->name('admin.category.delete');
+    Route::get('/admin/categories/status/{id}/{value}', [CategoryController::class, 'status'])->name('admin.category.status');
 
+    Route::get('admin/profile', [AdminController::class, 'adminProfile'])->name('admin.adminProfile');
+    Route::put('/admin/profile/change-login-url', [AdminController::class, 'adminChangeLoginURL'])->name('admin.adminChangeLoginURL');
+
+});
 // ***************  Admin Routes (End)  *********************************//
